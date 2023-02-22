@@ -2,7 +2,7 @@
 
 namespace ApiClients\Contracts\OpenAPI;
 
-interface WebHookInterface
+interface WebHooksInterface extends WebHookInterface
 {
     /**
      * @template H
@@ -15,10 +15,4 @@ interface WebHookInterface
      * @return array{className: class-string, data: mixed}
      */
     public function serializeWebHook(object $object) : array;
-
-    /**
-     * @param array<string, string> $headers
-     * @param array<mixed> $data
-     */
-    public function resolve(array $headers, array $data) : object;
 }
